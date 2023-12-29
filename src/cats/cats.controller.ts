@@ -4,6 +4,7 @@ import { CreateCatDto } from './dto/create-cat.dto';
 import { Cat } from './interfaces/cat.interface';
 import { TypedBody, TypedParam, TypedRoute } from '@nestia/core';
 import { randomUUID } from 'node:crypto'
+import { tags } from 'typia'
 
 // @UseGuards(RolesGuard)
 @Controller('cats')
@@ -25,7 +26,7 @@ export class CatsController {
   }
 
   @TypedRoute.Get(':id')
-  async findOne(@TypedParam('id') id: string): Promise<Cat | undefined> {
+  async findOne(@TypedParam('id') id: string & tags.Format<'uuid'>): Promise<Cat | undefined> {
     return this.catsService.findOne(id);
   }
 }
