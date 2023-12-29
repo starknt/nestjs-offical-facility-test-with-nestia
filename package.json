@@ -2,7 +2,7 @@
   "name": "nestjs-offical-facility-test-with-nestia",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "starknt",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -12,11 +12,6 @@
     "dev:tsc": "nest start --watch --tsc -p tsconfig.build.json",
     "dev:webpack": "nest start --watch --webpack --webpackPath webpack.config.js -p tsconfig.build.json",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
     "prepare": "ts-patch install && typia patch"
   },
   "dependencies": {
